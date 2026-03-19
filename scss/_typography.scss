@@ -1,0 +1,75 @@
+// ============================================================================
+// loyalty-user-styles / _typography.scss
+// Type scale mixins — apply exact Figma text styles.
+// Font family is Graphik TH, already loaded in WeWeb.
+// ============================================================================
+
+@use 'tokens' as *;
+
+@mixin _type-base {
+  font-family: $loyalty-font-family;
+}
+
+@mixin _type-style($map) {
+  @include _type-base;
+  font-size: map-get($map, size);
+  font-weight: map-get($map, weight);
+  line-height: map-get($map, lh);
+  @if map-has-key($map, ls) {
+    letter-spacing: map-get($map, ls);
+  }
+}
+
+// Headers
+@mixin loyalty-header-1 { @include _type-style($loyalty-type-header-1); }
+@mixin loyalty-header-2 { @include _type-style($loyalty-type-header-2); }
+@mixin loyalty-header-3 { @include _type-style($loyalty-type-header-3); }
+@mixin loyalty-header-4 { @include _type-style($loyalty-type-header-4); }
+
+// Titles
+@mixin loyalty-title-1 { @include _type-style($loyalty-type-title-1); }
+@mixin loyalty-title-2 { @include _type-style($loyalty-type-title-2); }
+@mixin loyalty-title-3 { @include _type-style($loyalty-type-title-3); }
+@mixin loyalty-title-4 { @include _type-style($loyalty-type-title-4); }
+@mixin loyalty-title-5 { @include _type-style($loyalty-type-title-5); }
+
+// Subtitles
+@mixin loyalty-subtitle-1 { @include _type-style($loyalty-type-subtitle-1); }
+@mixin loyalty-subtitle-2 { @include _type-style($loyalty-type-subtitle-2); }
+@mixin loyalty-subtitle-3 { @include _type-style($loyalty-type-subtitle-3); }
+@mixin loyalty-subtitle-4 { @include _type-style($loyalty-type-subtitle-4); }
+@mixin loyalty-subtitle-5 { @include _type-style($loyalty-type-subtitle-5); }
+
+// Body
+@mixin loyalty-body-1 { @include _type-style($loyalty-type-body-1); }
+@mixin loyalty-body-2 { @include _type-style($loyalty-type-body-2); }
+@mixin loyalty-body-3 { @include _type-style($loyalty-type-body-3); }
+@mixin loyalty-body-4 { @include _type-style($loyalty-type-body-4); }
+
+// Buttons
+@mixin loyalty-button-1 { @include _type-style($loyalty-type-button-1); }
+@mixin loyalty-button-2 { @include _type-style($loyalty-type-button-2); }
+@mixin loyalty-button-3 { @include _type-style($loyalty-type-button-3); }
+
+// Descriptions
+@mixin loyalty-desc-1 { @include _type-style($loyalty-type-desc-1); }
+@mixin loyalty-desc-2 { @include _type-style($loyalty-type-desc-2); }
+@mixin loyalty-desc-3 { @include _type-style($loyalty-type-desc-3); }
+@mixin loyalty-desc-4 { @include _type-style($loyalty-type-desc-4); }
+
+// Tag
+@mixin loyalty-tag { @include _type-style($loyalty-type-tag); }
+
+// Truncation helpers
+@mixin loyalty-truncate($lines: 1) {
+  @if $lines == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
