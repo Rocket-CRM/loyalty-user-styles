@@ -1,0 +1,76 @@
+// ============================================================================
+// loyalty-user-styles / _mixins.scss
+// Reusable UI pattern mixins. All brand values reference --loyalty-* CSS vars.
+// ============================================================================
+
+// Cards
+@mixin loyalty-card { background: var(--loyalty-bg-elevated); border-radius: var(--loyalty-radius-cards); overflow: hidden; }
+@mixin loyalty-card-dark { background: var(--loyalty-bg-dark); border-radius: var(--loyalty-radius-cards); color: var(--loyalty-text-inverse); overflow: hidden; }
+@mixin loyalty-card-elevated { @include loyalty-card; box-shadow: $loyalty-shadow-card; }
+
+// Buttons
+@mixin loyalty-btn-base { @include loyalty-button-1; display: inline-flex; align-items: center; justify-content: center; gap: $loyalty-space-2; border: none; cursor: pointer; transition: opacity 0.15s ease, background-color 0.15s ease; &:disabled { opacity: 0.5; cursor: not-allowed; } }
+@mixin loyalty-btn-primary { @include loyalty-btn-base; background: var(--loyalty-primary); color: $loyalty-white; border-radius: var(--loyalty-radius-buttons); padding: $loyalty-space-6 $loyalty-space-7; }
+@mixin loyalty-btn-secondary { @include loyalty-btn-base; background: transparent; color: var(--loyalty-primary); border: 1px solid var(--loyalty-primary); border-radius: var(--loyalty-radius-buttons); padding: $loyalty-space-6 $loyalty-space-7; }
+@mixin loyalty-btn-small { @include loyalty-btn-base; @include loyalty-button-3; border-radius: var(--loyalty-radius-button-sm); padding: $loyalty-space-3 $loyalty-space-6; }
+
+// Pills
+@mixin loyalty-pill { @include loyalty-button-3; display: inline-flex; align-items: center; justify-content: center; padding: 6.5px 14px; border-radius: var(--loyalty-radius-pill); border: 1px solid $loyalty-border-default; background: transparent; color: var(--loyalty-text-secondary); cursor: pointer; transition: all 0.15s ease; white-space: nowrap; }
+@mixin loyalty-pill-active { @include loyalty-pill; background: var(--loyalty-primary-tint); color: var(--loyalty-primary); border-color: transparent; }
+
+// Tags
+@mixin loyalty-tag-badge { @include loyalty-tag; display: inline-flex; align-items: center; gap: $loyalty-space-1; padding: $loyalty-space-2 $loyalty-space-4; border-radius: 4px; white-space: nowrap; }
+@mixin loyalty-tag-glass { @include loyalty-tag-badge; background: rgba(0, 0, 0, 0.24); backdrop-filter: $loyalty-glass-blur; color: $loyalty-white; }
+@mixin loyalty-tag-warning { @include loyalty-tag-badge; background: $loyalty-warning-alpha; backdrop-filter: $loyalty-glass-blur-light; color: $loyalty-white; border-radius: 12px 0 0 12px; }
+
+// Inputs
+@mixin loyalty-input { @include loyalty-body-2; width: 100%; padding: $loyalty-space-6 $loyalty-space-7; border: 1px solid $loyalty-border-default; border-radius: var(--loyalty-radius-inputs); background: var(--loyalty-bg-elevated); color: var(--loyalty-text-primary); outline: none; transition: border-color 0.15s ease, box-shadow 0.15s ease; &::placeholder { color: var(--loyalty-text-tertiary); } &:focus { border-color: var(--loyalty-primary); box-shadow: $loyalty-shadow-focus; } &:disabled { opacity: 0.5; cursor: not-allowed; } }
+
+// List Items
+@mixin loyalty-list-item { display: flex; align-items: center; gap: $loyalty-space-7; padding: $loyalty-space-7; border-bottom: 1px solid $loyalty-border-light; }
+
+// Overlay / Modal
+@mixin loyalty-glass($blur: $loyalty-glass-blur) { backdrop-filter: $blur; -webkit-backdrop-filter: $blur; }
+@mixin loyalty-overlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.5); z-index: 1000; }
+@mixin loyalty-modal { background: var(--loyalty-bg-elevated); border-radius: var(--loyalty-radius-modals); box-shadow: $loyalty-shadow-card; max-width: 90vw; max-height: 90vh; overflow: auto; }
+
+// Layout
+@mixin loyalty-section($gap: $loyalty-space-7) { display: flex; flex-direction: column; gap: $gap; width: 100%; }
+@mixin loyalty-section-header { @include loyalty-title-4; color: var(--loyalty-text-primary); }
+@mixin loyalty-row($gap: $loyalty-space-4) { display: flex; align-items: center; gap: $gap; }
+@mixin loyalty-grid($cols: 2, $gap: $loyalty-space-4) { display: grid; grid-template-columns: repeat($cols, 1fr); gap: $gap; }
+@mixin loyalty-scroll-x { display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; &::-webkit-scrollbar { display: none; } }
+
+// Empty State
+@mixin loyalty-empty-state { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: $loyalty-space-4; padding: $loyalty-space-11 $loyalty-space-7; text-align: center; color: var(--loyalty-text-tertiary); }
+
+// Tab Bar
+@mixin loyalty-tab-bar { display: flex; border-bottom: 1px solid $loyalty-border-light; gap: 0; width: 100%; }
+@mixin loyalty-tab { @include loyalty-subtitle-3; flex: 1; display: flex; align-items: center; justify-content: center; padding: $loyalty-space-6 $loyalty-space-4; color: var(--loyalty-text-tertiary); background: transparent; border: none; border-bottom: 2px solid transparent; cursor: pointer; transition: color 0.15s ease, border-color 0.15s ease; white-space: nowrap; }
+@mixin loyalty-tab-active { @include loyalty-tab; @include loyalty-subtitle-2; color: var(--loyalty-primary); border-bottom-color: var(--loyalty-primary); }
+
+// Bottom Sheet
+@mixin loyalty-bottom-sheet { background: var(--loyalty-bg-elevated); border-radius: var(--loyalty-radius-modals) var(--loyalty-radius-modals) 0 0; box-shadow: $loyalty-shadow-sheet; display: flex; flex-direction: column; overflow: hidden; }
+
+// Stat Card
+@mixin loyalty-stat-card { @include loyalty-card; display: flex; flex-direction: column; justify-content: space-between; padding: $loyalty-space-7; min-height: 80px; flex: 1; }
+
+// Pill Scroll
+@mixin loyalty-pill-scroll { @include loyalty-scroll-x; gap: $loyalty-space-3; padding: 0 $loyalty-space-7; }
+
+// Slip Modal
+@mixin loyalty-slip-modal { @include loyalty-overlay; display: flex; align-items: flex-end; justify-content: center; }
+@mixin loyalty-slip-content { background: var(--loyalty-bg-elevated); border-radius: var(--loyalty-radius-modals) var(--loyalty-radius-modals) 0 0; width: 100%; max-height: 90vh; overflow-y: auto; display: flex; flex-direction: column; box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.64); }
+
+// Barcode / QR Area
+@mixin loyalty-barcode-area { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: $loyalty-space-9; background: $loyalty-neutral-50; border-radius: var(--loyalty-radius-cards); border: 1px solid $loyalty-border-subtle; }
+
+// Confirm Dialog
+@mixin loyalty-confirm-dialog { @include loyalty-overlay; display: flex; align-items: center; justify-content: center; padding: $loyalty-space-8; }
+@mixin loyalty-confirm-dialog-content { @include loyalty-modal; padding: $loyalty-space-9; display: flex; flex-direction: column; gap: $loyalty-space-7; max-width: 340px; width: 100%; text-align: center; }
+
+// Package Card
+@mixin loyalty-package-card { @include loyalty-card; display: flex; gap: $loyalty-space-7; padding: $loyalty-space-4; border: 1px solid $loyalty-border-subtle; cursor: pointer; transition: box-shadow 0.15s ease; }
+
+// Benefit Card
+@mixin loyalty-benefit-card { @include loyalty-card; display: flex; flex-direction: column; border: 1px solid $loyalty-border-subtle; overflow: hidden; }

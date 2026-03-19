@@ -2,22 +2,26 @@
   "name": "loyalty-user-styles",
   "version": "1.0.0",
   "description": "Consumer-facing design system for loyalty member-facing WeWeb components",
-  "main": "js/theme.js",
-  "sass": "scss/index.scss",
-  "style": "scss/index.scss",
+  "main": "index.scss",
+  "style": "index.scss",
+  "sass": "index.scss",
+  "module": "js/theme.js",
+  "exports": {
+    ".": "./index.scss",
+    "./js/theme": "./js/theme.js",
+    "./js/*": "./js/*"
+  },
   "files": [
-    "scss/",
+    "index.scss",
+    "_tokens.scss",
+    "_variables.scss",
+    "_typography.scss",
+    "_mixins.scss",
     "js/"
   ],
-  "keywords": [
-    "loyalty",
-    "design-system",
-    "scss",
-    "weweb",
-    "theming"
-  ],
+  "keywords": ["loyalty", "design-system", "scss", "weweb", "theming"],
   "peerDependencies": {
-    "sass": ">=1.50.0"
+    "sass": ">=1.0.0"
   },
   "license": "UNLICENSED",
   "repository": {
