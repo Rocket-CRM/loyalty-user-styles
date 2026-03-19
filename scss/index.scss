@@ -1,0 +1,14 @@
+// ============================================================================
+// loyalty-user-styles — Main Entry Point
+//
+// Usage in WeWeb components:
+//   @use 'loyalty-user-styles/scss' as loyalty;
+//   or
+//   @use 'loyalty-user-styles/scss/mixins' as *;
+//   @use 'loyalty-user-styles/scss/typography' as *;
+// ============================================================================
+
+@forward 'tokens';
+@forward 'variables';
+@forward 'typography';
+@forward 'mixins';

@@ -1,0 +1,112 @@
+// ============================================================================
+// loyalty-user-styles / _tokens.scss
+// Static design tokens extracted from Figma: App Loyalty Client V2.0.0
+// These values are constant across all merchants.
+// ============================================================================
+
+// ---------------------------------------------------------------------------
+// Font Family
+// Graphik TH is loaded as the default font in WeWeb — no @font-face needed.
+// ---------------------------------------------------------------------------
+$loyalty-font-family: 'Graphik TH', sans-serif !default;
+
+// ---------------------------------------------------------------------------
+// Neutral Palette (fixed — not merchant-customizable)
+// ---------------------------------------------------------------------------
+$loyalty-black:        #000000 !default;
+$loyalty-neutral-900:  #121212 !default;
+$loyalty-neutral-800:  #2A2A2A !default;
+$loyalty-neutral-750:  #313131 !default;
+$loyalty-neutral-700:  #525257 !default;
+$loyalty-neutral-600:  #898989 !default;
+$loyalty-neutral-500:  #9B9B9B !default;
+$loyalty-neutral-400:  #B5B5B5 !default;
+$loyalty-neutral-300:  #CCCCCC !default;
+$loyalty-neutral-250:  #E1E1E1 !default;
+$loyalty-neutral-200:  #E8E8E8 !default;
+$loyalty-neutral-150:  #F0F0F0 !default;
+$loyalty-neutral-100:  #F5F5F5 !default;
+$loyalty-neutral-50:   #F9F9F9 !default;
+$loyalty-white:        #FFFFFF !default;
+
+// ---------------------------------------------------------------------------
+// Semantic Colors (fixed)
+// ---------------------------------------------------------------------------
+$loyalty-success:       #26C2A4 !default;
+$loyalty-success-text:  #336C51 !default;
+$loyalty-error:         #E53223 !default;
+$loyalty-error-dark:    #AD0E00 !default;
+$loyalty-warning:       #FF8800 !default;
+$loyalty-warning-alpha: rgba(255, 136, 0, 0.64) !default;
+$loyalty-info:          #003593 !default;
+
+// ---------------------------------------------------------------------------
+// Border Colors (fixed)
+// ---------------------------------------------------------------------------
+$loyalty-border-default:    rgba(234, 234, 235, 0.64) !default;
+$loyalty-border-light:      #F0F0F0 !default;
+$loyalty-border-subtle:     #E9E9E9 !default;
+$loyalty-border-medium:     #E1E1E1 !default;
+
+// ---------------------------------------------------------------------------
+// Effects (fixed)
+// ---------------------------------------------------------------------------
+$loyalty-glass-blur:         blur(6px) !default;
+$loyalty-glass-blur-light:   blur(4px) !default;
+$loyalty-shadow-card:        0px 4px 16px rgba(0, 0, 0, 0.2) !default;
+$loyalty-shadow-gold:        0px 2px 2px rgba(243, 184, 61, 0.16) !default;
+$loyalty-shadow-focus:       0px 0px 0px 2px rgba(0, 91, 211, 1) !default;
+$loyalty-shadow-sheet:       0px -4px 12px rgba(0, 0, 0, 0.25) !default;
+
+// ---------------------------------------------------------------------------
+// Spacing Scale
+// ---------------------------------------------------------------------------
+$loyalty-space-1:   2px !default;
+$loyalty-space-2:   4px !default;
+$loyalty-space-3:   6px !default;
+$loyalty-space-4:   8px !default;
+$loyalty-space-5:   10px !default;
+$loyalty-space-6:   12px !default;
+$loyalty-space-7:   16px !default;
+$loyalty-space-8:   20px !default;
+$loyalty-space-9:   24px !default;
+$loyalty-space-10:  32px !default;
+$loyalty-space-11:  40px !default;
+$loyalty-space-12:  64px !default;
+
+// ---------------------------------------------------------------------------
+// Typography Scale (Graphik TH)
+// Each entry: (size, weight, line-height [, letter-spacing])
+// ---------------------------------------------------------------------------
+$loyalty-type-header-1:     (size: 32px, weight: 600, lh: 1.2em) !default;
+$loyalty-type-header-2:     (size: 24px, weight: 600, lh: 1.08em, ls: 0.02em) !default;
+$loyalty-type-header-3:     (size: 24px, weight: 600, lh: 1.49em) !default;
+$loyalty-type-header-4:     (size: 24px, weight: 500, lh: 1.2em) !default;
+
+$loyalty-type-title-1:      (size: 20px, weight: 600, lh: 1.2em) !default;
+$loyalty-type-title-2:      (size: 20px, weight: 500, lh: 1.2em) !default;
+$loyalty-type-title-3:      (size: 18px, weight: 600, lh: 1.2em) !default;
+$loyalty-type-title-4:      (size: 16px, weight: 600, lh: 1.625em, ls: 0.02em) !default;
+$loyalty-type-title-5:      (size: 16px, weight: 600, lh: 1.2em) !default;
+
+$loyalty-type-subtitle-1:   (size: 15px, weight: 600, lh: 1.2em, ls: 0.02em) !default;
+$loyalty-type-subtitle-2:   (size: 14px, weight: 600, lh: 1.2em) !default;
+$loyalty-type-subtitle-3:   (size: 14px, weight: 500, lh: 1.2em) !default;
+$loyalty-type-subtitle-4:   (size: 13px, weight: 600, lh: 1.2em) !default;
+$loyalty-type-subtitle-5:   (size: 12px, weight: 600, lh: 1.2em) !default;
+
+$loyalty-type-body-1:       (size: 16px, weight: 400, lh: 1.25em) !default;
+$loyalty-type-body-2:       (size: 14px, weight: 400, lh: 1.43em) !default;
+$loyalty-type-body-3:       (size: 13px, weight: 400, lh: 1.2em) !default;
+$loyalty-type-body-4:       (size: 12px, weight: 400, lh: 1.67em) !default;
+
+$loyalty-type-button-1:     (size: 14px, weight: 500, lh: 1.43em) !default;
+$loyalty-type-button-2:     (size: 13px, weight: 600, lh: 1.2em) !default;
+$loyalty-type-button-3:     (size: 12px, weight: 500, lh: 1.2em) !default;
+
+$loyalty-type-desc-1:       (size: 11px, weight: 500, lh: 1.2em) !default;
+$loyalty-type-desc-2:       (size: 11px, weight: 400, lh: 1.2em) !default;
+$loyalty-type-desc-3:       (size: 10px, weight: 600, lh: 1.2em) !default;
+$loyalty-type-desc-4:       (size: 10px, weight: 400, lh: 1.2em) !default;
+
+$loyalty-type-tag:          (size: 13px, weight: 500, lh: 1.2em, ls: 0.02em) !default;

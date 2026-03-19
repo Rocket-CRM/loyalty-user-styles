@@ -1,0 +1,46 @@
+// ============================================================================
+// loyalty-user-styles / _variables.scss
+// CSS custom properties — dynamic values set at runtime from merchant
+// display settings via applyMerchantTheme().
+//
+// Defaults here are fallbacks; actual values come from:
+//   variables['05d7ab66-c90e-400b-a672-a3e6504f0851']
+// ============================================================================
+
+@use 'tokens' as *;
+
+@mixin loyalty-theme-defaults {
+  // Brand colors (overridden per-merchant)
+  --loyalty-primary: #FF2353;
+  --loyalty-secondary: #003593;
+  --loyalty-primary-tint: rgba(255, 35, 83, 0.08);
+  --loyalty-secondary-tint: rgba(0, 53, 147, 0.08);
+
+  // Border radii (overridden per-merchant)
+  --loyalty-radius-cards: 12px;
+  --loyalty-radius-buttons: 8px;
+  --loyalty-radius-inputs: 8px;
+  --loyalty-radius-modals: 16px;
+  --loyalty-radius-button-sm: 8px;
+  --loyalty-radius-pill: 9999px;
+
+  // Merchant assets
+  --loyalty-logo: none;
+  --loyalty-bg-image: none;
+
+  // Static neutrals as CSS vars for convenience
+  --loyalty-text-primary: #{$loyalty-black};
+  --loyalty-text-secondary: #{$loyalty-neutral-700};
+  --loyalty-text-tertiary: #{$loyalty-neutral-500};
+  --loyalty-text-inverse: #{$loyalty-white};
+  --loyalty-bg-page: #{$loyalty-white};
+  --loyalty-bg-surface: #{$loyalty-neutral-50};
+  --loyalty-bg-elevated: #{$loyalty-white};
+  --loyalty-bg-dark: #{$loyalty-neutral-800};
+  --loyalty-border: #{$loyalty-border-default};
+
+  // Semantic
+  --loyalty-success: #{$loyalty-success};
+  --loyalty-error: #{$loyalty-error};
+  --loyalty-warning: #{$loyalty-warning};
+}

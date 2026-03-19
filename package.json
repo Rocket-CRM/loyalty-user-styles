@@ -1,0 +1,27 @@
+{
+  "name": "loyalty-user-styles",
+  "version": "1.0.0",
+  "description": "Consumer-facing design system for loyalty member-facing WeWeb components",
+  "main": "js/theme.js",
+  "sass": "scss/index.scss",
+  "style": "scss/index.scss",
+  "files": [
+    "scss/",
+    "js/"
+  ],
+  "keywords": [
+    "loyalty",
+    "design-system",
+    "scss",
+    "weweb",
+    "theming"
+  ],
+  "peerDependencies": {
+    "sass": ">=1.50.0"
+  },
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rocket-CRM/loyalty-user-styles.git"
+  }
+}
