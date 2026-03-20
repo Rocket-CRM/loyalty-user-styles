@@ -1,6 +1,6 @@
 {
   "name": "loyalty-user-styles",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Consumer-facing design system for loyalty member-facing WeWeb components",
   "main": "index.scss",
   "style": "index.scss",

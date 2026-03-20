@@ -329,7 +329,7 @@
 }
 
 // ---------------------------------------------------------------------------
-// Barcode / QR Area
+// Barcode / QR Area (legacy — use loyalty-code-display for new components)
 // ---------------------------------------------------------------------------
 @mixin loyalty-barcode-area {
   display: flex;
@@ -378,7 +378,7 @@
 }
 
 // ---------------------------------------------------------------------------
-// Benefit Card
+// Benefit Card (legacy vertical layout)
 // ---------------------------------------------------------------------------
 @mixin loyalty-benefit-card {
   @include loyalty-card;
@@ -386,4 +386,61 @@
   flex-direction: column;
   border: 1px solid $loyalty-border-subtle;
   overflow: hidden;
+}
+
+// ---------------------------------------------------------------------------
+// Slip Text Tabs (Code / Barcode / QR toggle — text style, not segmented)
+// ---------------------------------------------------------------------------
+@mixin loyalty-slip-text-tabs {
+  display: flex;
+  border-bottom: 1px solid $loyalty-border-light;
+  width: 100%;
+}
+
+@mixin loyalty-slip-text-tab {
+  @include loyalty-subtitle-3;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $loyalty-space-6 $loyalty-space-4;
+  background: transparent;
+  border: none;
+  color: var(--loyalty-text-tertiary);
+  cursor: pointer;
+  text-align: center;
+  transition: color 0.15s ease;
+}
+
+@mixin loyalty-slip-text-tab-active {
+  @include loyalty-subtitle-2;
+  color: var(--loyalty-text-primary);
+}
+
+// ---------------------------------------------------------------------------
+// Benefit Row (horizontal list item — replaces vertical card pattern)
+// ---------------------------------------------------------------------------
+@mixin loyalty-benefit-row {
+  @include loyalty-list-item;
+  gap: $loyalty-space-6;
+  padding: $loyalty-space-6 $loyalty-space-7;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Code Display Area (slip code / barcode / QR container)
+// ---------------------------------------------------------------------------
+@mixin loyalty-code-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $loyalty-space-9 $loyalty-space-7;
+  background: $loyalty-neutral-50;
+  border-radius: var(--loyalty-radius-cards);
+  min-height: 140px;
+  gap: $loyalty-space-6;
 }
